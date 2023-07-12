@@ -9,8 +9,9 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-from pathlib import Path
 import os
+from pathlib import Path
+
 import dj_database_url
 # load enviromental variables
 if os.path.exists('env.py'):
@@ -27,8 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 DEBUG = os.environ.get('DEBUG', False)
 
 ALLOWED_HOSTS = ['django-blog-tom-03737538be6c.herokuapp.com',
-                 os.environ.get('ALLOWED_HOSTS'),
-                 'localhost']
+                 os.environ.get('ALLOWED_HOSTS')]
 
 
 
@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'cloudinary_storage'
+    'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
     'blog',
